@@ -7,7 +7,7 @@
    ============================================================ */
 const fs = require('fs');
 
-const UPDATED = "Sat 20 June 2026, 13:00 UTC";
+const UPDATED = "Tue 23 June 2026, 10:00 UTC";
 const YOU_NAME = "Madausinho";
 const YOU_RANK = "13th of 20 active";
 const YOU_TOTAL = 44;
@@ -59,14 +59,24 @@ const MATCHDAYS = [
   {h:"🇹🇷 Türkiye",a:"🇵🇾 Paraguay",grp:"D",res:[0,1],model:[1,0],mp:[45,30,25],exp:[1,0],you:[2,1],note:"Upset: Paraguay win, Türkiye out. Everyone backed Türkiye (0)."},
 ]},
 { md:5, label:"Matchday 5 · Round 2: Groups E–H · 20–22 Jun", games:[
-  {h:"🇳🇱 Netherlands",a:"🇸🇪 Sweden",grp:"F",ko:"Sat 20 Jun · 19:00 UTC",mp:[42,29,29],exp:[2,1],rec:[2,1],you:null,note:"Both can score — Sweden hot off 5-1, Dutch defence leaky (Timber/De Ligt out). Draw very live; back home quality but expect goals."},
-  {h:"🇩🇪 Germany",a:"🇨🇮 Ivory Coast",grp:"E",ko:"Sat 20 Jun · 22:00 UTC",mp:[58,25,17],exp:[2,0],rec:[2,0],you:null,note:"Germany scored 7 in MD2; Ivory Coast organised but Germany's firepower should tell."},
-  {h:"🇪🇨 Ecuador",a:"🇨🇼 Curaçao",grp:"E",ko:"Sun 21 Jun · 02:00 UTC",mp:[70,20,10],exp:[3,1],rec:[3,0],you:null,note:"Ecuador strong defensively; Curaçao shipped 7 to Germany. Back a clear margin for the goal-diff points."},
-  {h:"🇹🇳 Tunisia",a:"🇯🇵 Japan",grp:"F",ko:"Sun 21 Jun · 06:00 UTC",mp:[27,30,43],exp:[0,2],rec:[0,2],you:null,note:"Japan the better side (drew the Dutch); Tunisia lost 5-1. Lean Japan by two."},
-  {h:"🇪🇸 Spain",a:"🇸🇦 Saudi Arabia",grp:"H",ko:"Sun 21 Jun · 18:00 UTC",mp:[68,22,10],exp:[2,0],rec:[2,0],you:null,note:"Spain must respond after the shock Cape Verde 0-0; quality eventually breaks Saudi down."},
-  {h:"🇧🇪 Belgium",a:"🇮🇷 Iran",grp:"G",ko:"Sun 21 Jun · 21:00 UTC",mp:[50,28,22],exp:[2,0],rec:[2,0],you:null,note:"Belgium need a win after the Egypt draw; Iran defensively stubborn but Belgium's class edges it."},
-  {h:"🇺🇾 Uruguay",a:"🇨🇻 Cape Verde",grp:"H",ko:"Mon 22 Jun · 00:00 UTC",mp:[55,28,17],exp:[2,0],rec:[2,0],you:null,note:"Cape Verde defend well (held Spain), but Bielsa's Uruguay should find a way; back a 2-goal win."},
-  {h:"🇳🇿 New Zealand",a:"🇪🇬 Egypt",grp:"G",ko:"Mon 22 Jun · 03:00 UTC",mp:[30,31,39],exp:[0,1],rec:[0,1],you:null,note:"Salah's Egypt favoured; NZ tough to beat (drew Iran). Tight — draw is a real outcome, but lean Egypt."},
+  {h:"🇳🇱 Netherlands",a:"🇸🇪 Sweden",grp:"F",res:[5,1],mp:[42,29,29],exp:[2,1],you:null,note:"Brobbey (2), Gakpo (2) and Summerville: Dutch five-star show, Elanga's reply academic. Everyone under-called this one badly."},
+  {h:"🇩🇪 Germany",a:"🇨🇮 Ivory Coast",grp:"E",res:[2,1],mp:[58,25,17],exp:[2,0],you:null,note:"Kessié had CIV ahead, but Undav's 94th-minute winner off the bench sent Germany through. Expert EXACT goal-diff (+3)."},
+  {h:"🇪🇨 Ecuador",a:"🇨🇼 Curaçao",grp:"E",res:[0,0],mp:[70,20,10],exp:[3,1],you:null,note:"Eloy Room's 15 saves earned Curaçao a famous point despite 75% Ecuador possession — biggest shock of the round."},
+  {h:"🇹🇳 Tunisia",a:"🇯🇵 Japan",grp:"F",res:[0,4],mp:[27,30,43],exp:[0,2],you:null,note:"Ueda brace plus Kamada and Ito; Japan's record WC win eliminates Tunisia. Expert had the right winner, way under on goals."},
+  {h:"🇪🇸 Spain",a:"🇸🇦 Saudi Arabia",grp:"H",res:[4,0],mp:[68,22,10],exp:[2,0],you:null,note:"Yamal + Oyarzabal brace + an OG inside the first half-hour; Spain respond to the Cape Verde shock in style."},
+  {h:"🇧🇪 Belgium",a:"🇮🇷 Iran",grp:"G",res:[0,0],mp:[50,28,22],exp:[2,0],you:null,note:"Goalless stalemate — Belgium held again after the Egypt draw; Iran's low block frustrates everyone's prediction."},
+  {h:"🇺🇾 Uruguay",a:"🇨🇻 Cape Verde",grp:"H",res:[2,2],mp:[55,28,17],exp:[2,0],you:null,note:"Pina's free-kick shocked Uruguay again; Bielsa's side needed two replies just to draw level. Cape Verde's second straight point."},
+  {h:"🇳🇿 New Zealand",a:"🇪🇬 Egypt",grp:"G",res:[1,3],mp:[30,31,39],exp:[0,1],you:null,note:"Surman header had NZ ahead at the break, but Salah + Zico (goal & assist each) and a late Trezeguet strike turn it round — Egypt's first-ever WC win."},
+]},
+{ md:6, label:"Matchday 6 · Round 2: Groups I–L · 22–24 Jun", games:[
+  {h:"🇳🇴 Norway",a:"🇸🇳 Senegal",grp:"I",res:[3,2],you:null,exp:null,note:"Haaland double (and a Pedersen opener) sees Norway past Senegal in a shootout — sets up a Group I decider with France."},
+  {h:"🇫🇷 France",a:"🇮🇶 Iraq",grp:"I",res:[3,0],you:null,exp:null,note:"Mbappé brace + Dembélé; France through to the round of 32 with a game to spare."},
+  {h:"🇦🇷 Argentina",a:"🇦🇹 Austria",grp:"J",res:[2,0],you:null,exp:null,note:"Argentina win to close in on the group; Messi's side look the part again."},
+  {h:"🇯🇴 Jordan",a:"🇩🇿 Algeria",grp:"J",res:[1,2],you:null,exp:null,note:"Al-Rashdan had Jordan ahead, but Benbouali levelled and Gouiri's 82nd-minute winner eliminates them — Group J's first casualty."},
+  {h:"🇵🇹 Portugal",a:"🇺🇿 Uzbekistan",grp:"K",ko:"Tue 23 Jun · 17:00 UTC",mp:[80,13,7],rec:[2,0],you:null,exp:null,note:"Portugal heavy favourites after an underwhelming 1-1 with DR Congo; Uzbekistan shipped 3 to Colombia."},
+  {h:"🇨🇴 Colombia",a:"🇨🇩 DR Congo",grp:"K",ko:"Wed 24 Jun · 02:00 UTC",mp:[58,24,18],rec:[1,0],you:null,exp:null,note:"Opta supercomputer figure (58.0% Colombia from its pre-match simulations) — DR Congo's Portugal point shows they won't just roll over."},
+  {h:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 England",a:"🇬🇭 Ghana",grp:"L",ko:"Tue 23 Jun · 20:00 UTC",mp:[73,15,12],rec:[2,0],you:null,exp:null,note:"England strongly favoured at home in Foxborough; Ghana the clear underdog on the moneyline."},
+  {h:"🇵🇦 Panama",a:"🇭🇷 Croatia",grp:"L",ko:"Tue 23 Jun · 23:00 UTC",mp:[16,22,62],rec:[0,1],you:null,exp:null,note:"Opta supercomputer backs Croatia in 62.0% of its pre-match simulations; must-win for already-eliminated-on-points Panama."},
 ]},
 ];
 
@@ -169,7 +179,7 @@ html+='<main>';
 html+='<section id="board"><h2>🏅 Standings — '+T_you.played+' games scored</h2>';
 const cards=[['You ('+YOU_NAME+')',T_you,'lead'],['Statistical model',T_mod,''],['Big D (expert)',T_exp,'']];
 html+='<div class="board">'+cards.map(c=>'<div class="bcard '+c[2]+'"><div class="nm">'+c[0]+'</div><div class="pt">'+c[1].p+'</div><div class="br">'+c[1].ex+' exact · '+c[1].g3+' goal-diff · '+c[1].g2+' winner · '+c[1].hit+'/'+c[1].played+' hit</div></div>').join('')+'</div>';
-html+='<div class="note">Your kicktipp rank: <b>'+YOU_RANK+'</b> — <b>'+YOU_TOTAL+' pts</b> (incl. 8 bonus points, which the model/expert don\'t play; the head-to-head above counts game tips only, so You = 36). The model stretched its lead in round 2 by nailing several exact 1-0/1-1/0-1 results, while your bigger scorelines kept landing on the right winner but the wrong margin (lots of +2s, no +3/+4 in MD4). Two takeaways for MD5: (1) tip <b>every</b> game — untipped games are the costliest, and (2) for the tight matches, a cautious 1-0 scores more reliably than a 2-1. Suggested tips are on each MD5 card below. 🎯</div>';
+html+='<div class="note">Your kicktipp rank: <b>'+YOU_RANK+'</b> — <b>'+YOU_TOTAL+' pts</b> (incl. 8 bonus points, which the model/expert don\'t play; the head-to-head above counts game tips only, so You = 36). MD5 had no tips logged for you at all — that\'s the single biggest gap vs. the model/expert. Two takeaways for MD6: (1) tip <b>every</b> game — untipped games are the costliest, and (2) for the tight matches, a cautious 1-0 scores more reliably than a 2-1. Suggested tips are on each MD6 card below. 🎯</div>';
 html+='<div class="scroll"><table class="tab"><thead><tr><th class="l">Predictor</th><th>Points</th><th>Exact (4)</th><th>GoalDiff (3)</th><th>Winner (2)</th><th>Outcome hits</th></tr></thead><tbody>';
 for(const c of cards) html+='<tr><td class="l">'+c[0]+'</td><td>'+c[1].p+'</td><td>'+c[1].ex+'</td><td>'+c[1].g3+'</td><td>'+c[1].g2+'</td><td>'+c[1].hit+'/'+c[1].played+'</td></tr>';
 html+='</tbody></table></div></section>';
