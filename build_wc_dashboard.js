@@ -7,7 +7,7 @@
    ============================================================ */
 const fs = require('fs');
 
-const UPDATED = "Tue 23 June 2026, 22:00 UTC";
+const UPDATED = "Tue 23 June 2026, 10:00 UTC";
 const YOU_NAME = "Madausinho";
 const YOU_RANK = "13th of 20 active";
 const YOU_TOTAL = 44;
@@ -73,9 +73,9 @@ const MATCHDAYS = [
   {h:"🇫🇷 France",a:"🇮🇶 Iraq",grp:"I",res:[3,0],you:null,exp:null,note:"Mbappé brace + Dembélé; France through to the round of 32 with a game to spare."},
   {h:"🇦🇷 Argentina",a:"🇦🇹 Austria",grp:"J",res:[2,0],you:null,exp:null,note:"Argentina win to close in on the group; Messi's side look the part again."},
   {h:"🇯🇴 Jordan",a:"🇩🇿 Algeria",grp:"J",res:[1,2],you:null,exp:null,note:"Al-Rashdan had Jordan ahead, but Benbouali levelled and Gouiri's 82nd-minute winner eliminates them — Group J's first casualty."},
-  {h:"🇵🇹 Portugal",a:"🇺🇿 Uzbekistan",grp:"K",res:[1,0],mp:[80,13,7],you:null,exp:null,note:"João Neves' goal was enough — Portugal scrape past Uzbekistan after the DR Congo scare. Model EXACT winner, under on the margin."},
-  {h:"🇨🇴 Colombia",a:"🇨🇩 DR Congo",grp:"K",ko:"Wed 24 Jun · 02:00 UTC",mp:[58,24,18],rec:[1,0],you:null,exp:null,note:"Updated Opta supercomputer figure (58.0% Colombia from its pre-match simulations) — DR Congo's Portugal point shows they won't just roll over."},
-  {h:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 England",a:"🇬🇭 Ghana",grp:"L",res:[0,1],mp:[73,15,12],you:null,exp:null,note:"Shock! Caleb Yirenkyi's 95th-minute strike — Ghana's latest-ever WC goal — beats heavy favourites England. Nobody had this."},
+  {h:"🇵🇹 Portugal",a:"🇺🇿 Uzbekistan",grp:"K",ko:"Tue 23 Jun · 17:00 UTC",mp:[80,13,7],rec:[2,0],you:null,exp:null,note:"Portugal heavy favourites after an underwhelming 1-1 with DR Congo; Uzbekistan shipped 3 to Colombia."},
+  {h:"🇨🇴 Colombia",a:"🇨🇩 DR Congo",grp:"K",ko:"Wed 24 Jun · 02:00 UTC",mp:[58,24,18],rec:[1,0],you:null,exp:null,note:"Opta supercomputer figure (58.0% Colombia from its pre-match simulations) — DR Congo's Portugal point shows they won't just roll over."},
+  {h:"🏴󠁧󠁢󠁥󠁮󠁧󠁿 England",a:"🇬🇭 Ghana",grp:"L",ko:"Tue 23 Jun · 20:00 UTC",mp:[73,15,12],rec:[2,0],you:null,exp:null,note:"England strongly favoured at home in Foxborough; Ghana the clear underdog on the moneyline."},
   {h:"🇵🇦 Panama",a:"🇭🇷 Croatia",grp:"L",ko:"Tue 23 Jun · 23:00 UTC",mp:[16,22,62],rec:[0,1],you:null,exp:null,note:"Opta supercomputer backs Croatia in 62.0% of its pre-match simulations; must-win for already-eliminated-on-points Panama."},
 ]},
 ];
