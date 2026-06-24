@@ -1,9 +1,792 @@
 {
-  "fetchedAt": "2026-06-24T09:12:14.439Z",
+  "fetchedAt": "2026-06-24T18:12:49.337Z",
   "tipper": "Madausinho",
   "rank": "9th of 23",
   "total": 81,
   "bonus": 16,
+  "rounds": [
+    {
+      "index": 1,
+      "label": "Matchday 1",
+      "knockout": false,
+      "games": [
+        {
+          "home": "Mexico",
+          "away": "South Africa",
+          "res": [
+            2,
+            0
+          ],
+          "tip": [
+            2,
+            0
+          ]
+        },
+        {
+          "home": "South Korea",
+          "away": "Czechia",
+          "res": [
+            2,
+            1
+          ],
+          "tip": [
+            1,
+            2
+          ]
+        },
+        {
+          "home": "Canada",
+          "away": "Bosnia",
+          "res": [
+            1,
+            1
+          ],
+          "tip": [
+            1,
+            0
+          ]
+        },
+        {
+          "home": "USA",
+          "away": "Paraguay",
+          "res": [
+            4,
+            1
+          ],
+          "tip": [
+            2,
+            1
+          ]
+        },
+        {
+          "home": "Qatar",
+          "away": "Switzerland",
+          "res": [
+            1,
+            1
+          ],
+          "tip": [
+            0,
+            2
+          ]
+        },
+        {
+          "home": "Brazil",
+          "away": "Morocco",
+          "res": [
+            1,
+            1
+          ],
+          "tip": [
+            2,
+            1
+          ]
+        },
+        {
+          "home": "Haiti",
+          "away": "Scotland",
+          "res": [
+            0,
+            1
+          ],
+          "tip": [
+            0,
+            2
+          ]
+        },
+        {
+          "home": "Australia",
+          "away": "Türkiye",
+          "res": [
+            2,
+            0
+          ],
+          "tip": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "label": "Matchday 2",
+      "knockout": false,
+      "games": [
+        {
+          "home": "Germany",
+          "away": "Curaçao",
+          "res": [
+            7,
+            1
+          ],
+          "tip": [
+            2,
+            0
+          ]
+        },
+        {
+          "home": "Netherlands",
+          "away": "Japan",
+          "res": [
+            2,
+            2
+          ],
+          "tip": [
+            1,
+            2
+          ]
+        },
+        {
+          "home": "Ivory Coast",
+          "away": "Ecuador",
+          "res": [
+            1,
+            0
+          ],
+          "tip": [
+            0,
+            1
+          ]
+        },
+        {
+          "home": "Sweden",
+          "away": "Tunisia",
+          "res": [
+            5,
+            1
+          ],
+          "tip": [
+            2,
+            1
+          ]
+        },
+        {
+          "home": "Spain",
+          "away": "Cape Verde",
+          "res": [
+            0,
+            0
+          ],
+          "tip": [
+            2,
+            0
+          ]
+        },
+        {
+          "home": "Belgium",
+          "away": "Egypt",
+          "res": [
+            1,
+            1
+          ],
+          "tip": [
+            1,
+            1
+          ]
+        },
+        {
+          "home": "Saudi Arabia",
+          "away": "Uruguay",
+          "res": [
+            1,
+            1
+          ],
+          "tip": [
+            0,
+            2
+          ]
+        },
+        {
+          "home": "Iran",
+          "away": "New Zealand",
+          "res": [
+            2,
+            2
+          ],
+          "tip": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "label": "Matchday 3",
+      "knockout": false,
+      "games": [
+        {
+          "home": "France",
+          "away": "Senegal",
+          "res": [
+            3,
+            1
+          ],
+          "tip": [
+            3,
+            1
+          ]
+        },
+        {
+          "home": "Iraq",
+          "away": "Norway",
+          "res": [
+            1,
+            4
+          ],
+          "tip": [
+            0,
+            2
+          ]
+        },
+        {
+          "home": "Argentina",
+          "away": "Algeria",
+          "res": [
+            3,
+            0
+          ],
+          "tip": [
+            3,
+            1
+          ]
+        },
+        {
+          "home": "Austria",
+          "away": "Jordan",
+          "res": [
+            3,
+            1
+          ],
+          "tip": [
+            1,
+            0
+          ]
+        },
+        {
+          "home": "Portugal",
+          "away": "DR Congo",
+          "res": [
+            1,
+            1
+          ],
+          "tip": [
+            4,
+            0
+          ]
+        },
+        {
+          "home": "England",
+          "away": "Croatia",
+          "res": [
+            4,
+            2
+          ],
+          "tip": [
+            1,
+            2
+          ]
+        },
+        {
+          "home": "Ghana",
+          "away": "Panama",
+          "res": [
+            1,
+            0
+          ],
+          "tip": null
+        },
+        {
+          "home": "Uzbekistan",
+          "away": "Colombia",
+          "res": [
+            1,
+            3
+          ],
+          "tip": null
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "label": "Matchday 4",
+      "knockout": false,
+      "games": [
+        {
+          "home": "Czechia",
+          "away": "South Africa",
+          "res": [
+            1,
+            1
+          ],
+          "tip": null
+        },
+        {
+          "home": "Switzerland",
+          "away": "Bosnia",
+          "res": [
+            4,
+            1
+          ],
+          "tip": [
+            2,
+            1
+          ]
+        },
+        {
+          "home": "Canada",
+          "away": "Qatar",
+          "res": [
+            6,
+            0
+          ],
+          "tip": [
+            2,
+            1
+          ]
+        },
+        {
+          "home": "Mexico",
+          "away": "South Korea",
+          "res": [
+            1,
+            0
+          ],
+          "tip": [
+            1,
+            2
+          ]
+        },
+        {
+          "home": "USA",
+          "away": "Australia",
+          "res": [
+            2,
+            0
+          ],
+          "tip": [
+            2,
+            1
+          ]
+        },
+        {
+          "home": "Scotland",
+          "away": "Morocco",
+          "res": [
+            0,
+            1
+          ],
+          "tip": [
+            1,
+            3
+          ]
+        },
+        {
+          "home": "Brazil",
+          "away": "Haiti",
+          "res": [
+            3,
+            0
+          ],
+          "tip": [
+            5,
+            1
+          ]
+        },
+        {
+          "home": "Türkiye",
+          "away": "Paraguay",
+          "res": [
+            0,
+            1
+          ],
+          "tip": [
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "label": "Matchday 5",
+      "knockout": false,
+      "games": [
+        {
+          "home": "Netherlands",
+          "away": "Sweden",
+          "res": [
+            5,
+            1
+          ],
+          "tip": [
+            2,
+            1
+          ]
+        },
+        {
+          "home": "Germany",
+          "away": "Ivory Coast",
+          "res": [
+            2,
+            1
+          ],
+          "tip": [
+            3,
+            1
+          ]
+        },
+        {
+          "home": "Ecuador",
+          "away": "Curaçao",
+          "res": [
+            0,
+            0
+          ],
+          "tip": [
+            3,
+            0
+          ]
+        },
+        {
+          "home": "Tunisia",
+          "away": "Japan",
+          "res": [
+            0,
+            4
+          ],
+          "tip": [
+            1,
+            2
+          ]
+        },
+        {
+          "home": "Spain",
+          "away": "Saudi Arabia",
+          "res": [
+            4,
+            0
+          ],
+          "tip": [
+            2,
+            0
+          ]
+        },
+        {
+          "home": "Belgium",
+          "away": "Iran",
+          "res": [
+            0,
+            0
+          ],
+          "tip": [
+            3,
+            1
+          ]
+        },
+        {
+          "home": "Uruguay",
+          "away": "Cape Verde",
+          "res": [
+            2,
+            2
+          ],
+          "tip": [
+            3,
+            0
+          ]
+        },
+        {
+          "home": "New Zealand",
+          "away": "Egypt",
+          "res": [
+            1,
+            3
+          ],
+          "tip": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "label": "Matchday 6",
+      "knockout": false,
+      "games": [
+        {
+          "home": "Argentina",
+          "away": "Austria",
+          "res": [
+            2,
+            0
+          ],
+          "tip": [
+            3,
+            1
+          ]
+        },
+        {
+          "home": "France",
+          "away": "Iraq",
+          "res": [
+            3,
+            0
+          ],
+          "tip": [
+            4,
+            1
+          ]
+        },
+        {
+          "home": "Norway",
+          "away": "Senegal",
+          "res": [
+            3,
+            2
+          ],
+          "tip": [
+            2,
+            1
+          ]
+        },
+        {
+          "home": "Jordan",
+          "away": "Algeria",
+          "res": [
+            1,
+            2
+          ],
+          "tip": [
+            0,
+            1
+          ]
+        },
+        {
+          "home": "Portugal",
+          "away": "Uzbekistan",
+          "res": [
+            5,
+            0
+          ],
+          "tip": [
+            3,
+            1
+          ]
+        },
+        {
+          "home": "England",
+          "away": "Ghana",
+          "res": [
+            0,
+            0
+          ],
+          "tip": [
+            3,
+            0
+          ]
+        },
+        {
+          "home": "Panama",
+          "away": "Croatia",
+          "res": [
+            0,
+            1
+          ],
+          "tip": [
+            0,
+            2
+          ]
+        },
+        {
+          "home": "Colombia",
+          "away": "DR Congo",
+          "res": [
+            1,
+            0
+          ],
+          "tip": [
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "label": "Matchday 7",
+      "knockout": false,
+      "games": [
+        {
+          "home": "Bosnia",
+          "away": "Qatar",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Switzerland",
+          "away": "Canada",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Morocco",
+          "away": "Haiti",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Scotland",
+          "away": "Brazil",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "South Africa",
+          "away": "South Korea",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Czechia",
+          "away": "Mexico",
+          "res": null,
+          "tip": null
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "label": "Matchday 8",
+      "knockout": false,
+      "games": [
+        {
+          "home": "Curaçao",
+          "away": "Ivory Coast",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Ecuador",
+          "away": "Germany",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Japan",
+          "away": "Sweden",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Tunisia",
+          "away": "Netherlands",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Paraguay",
+          "away": "Australia",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Türkiye",
+          "away": "USA",
+          "res": null,
+          "tip": null
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "label": "Matchday 9",
+      "knockout": false,
+      "games": [
+        {
+          "home": "Norway",
+          "away": "France",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Senegal",
+          "away": "Iraq",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Uruguay",
+          "away": "Spain",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Cape Verde",
+          "away": "Saudi Arabia",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "New Zealand",
+          "away": "Belgium",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Egypt",
+          "away": "Iran",
+          "res": null,
+          "tip": null
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "label": "Matchday 10",
+      "knockout": false,
+      "games": [
+        {
+          "home": "Croatia",
+          "away": "Ghana",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Panama",
+          "away": "England",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "DR Congo",
+          "away": "Uzbekistan",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Colombia",
+          "away": "Portugal",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Algeria",
+          "away": "Austria",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Jordan",
+          "away": "Argentina",
+          "res": null,
+          "tip": null
+        }
+      ]
+    }
+  ],
   "matches": {
     "Mexico|South Africa": {
       "res": [
@@ -475,6 +1258,102 @@
         2,
         1
       ]
+    },
+    "Bosnia|Qatar": {
+      "res": null,
+      "tip": null
+    },
+    "Switzerland|Canada": {
+      "res": null,
+      "tip": null
+    },
+    "Morocco|Haiti": {
+      "res": null,
+      "tip": null
+    },
+    "Scotland|Brazil": {
+      "res": null,
+      "tip": null
+    },
+    "South Africa|South Korea": {
+      "res": null,
+      "tip": null
+    },
+    "Czechia|Mexico": {
+      "res": null,
+      "tip": null
+    },
+    "Curaçao|Ivory Coast": {
+      "res": null,
+      "tip": null
+    },
+    "Ecuador|Germany": {
+      "res": null,
+      "tip": null
+    },
+    "Japan|Sweden": {
+      "res": null,
+      "tip": null
+    },
+    "Tunisia|Netherlands": {
+      "res": null,
+      "tip": null
+    },
+    "Paraguay|Australia": {
+      "res": null,
+      "tip": null
+    },
+    "Türkiye|USA": {
+      "res": null,
+      "tip": null
+    },
+    "Norway|France": {
+      "res": null,
+      "tip": null
+    },
+    "Senegal|Iraq": {
+      "res": null,
+      "tip": null
+    },
+    "Uruguay|Spain": {
+      "res": null,
+      "tip": null
+    },
+    "Cape Verde|Saudi Arabia": {
+      "res": null,
+      "tip": null
+    },
+    "New Zealand|Belgium": {
+      "res": null,
+      "tip": null
+    },
+    "Egypt|Iran": {
+      "res": null,
+      "tip": null
+    },
+    "Croatia|Ghana": {
+      "res": null,
+      "tip": null
+    },
+    "Panama|England": {
+      "res": null,
+      "tip": null
+    },
+    "DR Congo|Uzbekistan": {
+      "res": null,
+      "tip": null
+    },
+    "Colombia|Portugal": {
+      "res": null,
+      "tip": null
+    },
+    "Algeria|Austria": {
+      "res": null,
+      "tip": null
+    },
+    "Jordan|Argentina": {
+      "res": null,
+      "tip": null
     }
   }
 }

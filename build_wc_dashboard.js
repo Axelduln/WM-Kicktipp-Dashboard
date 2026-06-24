@@ -102,6 +102,41 @@ try {
   UPDATED = new Date(kt.fetchedAt).toUTCString().replace('GMT','UTC');
   YOU_RANK = kt.rank; YOU_TOTAL = kt.total; YOU_BONUS = kt.bonus;
   console.log('Merged Kicktipp:', filled, 'games ·', kt.tipper, kt.rank+',', kt.total+'pts ('+kt.bonus+' bonus)');
+
+  // ---- append every further Kicktipp round (group round 3 + knockouts) not in the curated MD1-6 ----
+  const curated = new Set(MATCHDAYS.map(m=>m.md));
+  // harvest flag emoji per team from the curated games so new rounds render with flags too
+  const FLAG={}; for(const md of MATCHDAYS) for(const g of md.games){ FLAG[nm(g.h)]=g.h.substring(0,g.h.indexOf(' ')); FLAG[nm(g.a)]=g.a.substring(0,g.a.indexOf(' ')); }
+  const withFlag=(t)=> (FLAG[t]?FLAG[t]+' ':'')+t;
+
+  // auto Poisson "model" from all results so far (regularised + capped, winner-first scoreline)
+  const S={}, addS=(t)=>S[t]||(S[t]={gf:0,ga:0,g:0}); let tg=0,tn=0;
+  for(const k in kt.matches){ const m=kt.matches[k]; if(!m.res) continue; const [h,a]=k.split('|'); const [hg,ag]=m.res;
+    addS(h);addS(a); S[h].gf+=hg;S[h].ga+=ag;S[h].g++; S[a].gf+=ag;S[a].ga+=hg;S[a].g++; tg+=hg+ag; tn++; }
+  const lavg=tn?tg/(tn*2):1.4, PR=2.5, CAPG=2.6;
+  const att=(t)=>S[t]?((S[t].gf+lavg*PR)/(S[t].g+PR))/lavg:1, dff=(t)=>S[t]?((S[t].ga+lavg*PR)/(S[t].g+PR))/lavg:1;
+  function autoModel(h,a){ const xh=Math.min(att(h)*dff(a)*lavg,CAPG), xa=Math.min(att(a)*dff(h)*lavg,CAPG);
+    let pw=0,pd=0,pl=0,grid=[]; for(let i=0;i<=5;i++)for(let j=0;j<=5;j++){const p=pois(xh,i)*pois(xa,j);grid.push([i,j,p]); if(i>j)pw+=p;else if(i==j)pd+=p;else pl+=p;}
+    const o= pw>=pd&&pw>=pl?'H':(pl>=pd&&pl>=pw?'A':'D'), ok=([i,j])=>o==='H'?i>j:o==='A'?i<j:i===j;
+    let b=[0,0],bp=-1; for(const [i,j,p] of grid){ if(ok([i,j])&&p>bp){bp=p;b=[i,j];} } return b; }
+
+  // freeze model predictions so a pick can't shift after kickoff; load ChatGPT group picks
+  let PRED={}; try{ PRED=JSON.parse(fs.readFileSync(__dirname+'/predictions.json','utf8')); }catch{}
+  let CG={};   try{ CG=JSON.parse(fs.readFileSync(__dirname+'/chatgpt_picks.json','utf8')); }catch{}
+  let predChanged=false, added=0;
+  for(const r of (kt.rounds||[])){
+    if(curated.has(r.index)) continue;
+    const games=r.games.map(g=>{
+      const key=g.home+'|'+g.away;
+      let model=PRED[key]; if(!model){ model=autoModel(g.home,g.away); PRED[key]=model; predChanged=true; }
+      let gpt=CG[key]||null; if(!gpt&&CG[g.away+'|'+g.home]){ const x=CG[g.away+'|'+g.home]; gpt=[x[1],x[0]]; }
+      return { h:withFlag(g.home), a:withFlag(g.away), grp:'', res:g.res||null, you:g.tip||null, model, gpt, exp:null };
+    });
+    MATCHDAYS.push({ md:r.index, label:r.label+(r.knockout?'':' · Group round 3'), nav:r.knockout?r.label:('MD'+r.index), games });
+    added++;
+  }
+  if(predChanged) fs.writeFileSync(__dirname+'/predictions.json', JSON.stringify(PRED,null,1));
+  if(added) console.log('Appended', added, 'further rounds (group round 3 + knockouts).');
 } catch (err) {
   console.warn('No live kicktipp_data.json ('+err.message+') — using hardcoded fallbacks.');
 }
@@ -127,7 +162,8 @@ function pBadge(tip,res){ const s=sc(tip,res); if(s===null) return '<span class=
 function gameCard(g){
   const played=!!g.res;
   let h='<div class="gc">';
-  h+='<div class="gc-top"><span class="gc-t">'+g.h+' v '+g.a+'</span><span class="gc-grp">Grp '+g.grp+(played?' · FT':(g.ko?' · '+g.ko:''))+'</span></div>';
+  const meta=[]; if(g.grp)meta.push('Grp '+g.grp); if(played)meta.push('FT'); else if(g.ko)meta.push(g.ko);
+  h+='<div class="gc-top"><span class="gc-t">'+g.h+' v '+g.a+'</span><span class="gc-grp">'+meta.join(' · ')+'</span></div>';
   if(played) h+='<div class="gc-res">'+g.res[0]+'–'+g.res[1]+'</div>';
   // three predictions
   const row=(label,tip,cls)=>'<div class="pr"><span class="pr-l '+cls+'">'+label+'</span><span class="pr-s">'+sv(tip)+'</span>'+(played?pBadge(tip,g.res):(tip?'':'<span class="pb p0">—</span>'))+'</div>';
@@ -199,7 +235,7 @@ html+='<title>World Cup 2026 — My Tipp Tracker</title><style>'+css+'</style></
 html+='<header><h1>🏆 WC 2026 — Tipp Tracker &amp; Predictions</h1><div class="sub">You vs the statistical model vs Big D (expert blog) vs ChatGPT (AI) · scored by your kicktipp rules (4 exact / 3 goal-diff / 2 winner) · updated '+UPDATED+'</div></header>';
 
 // nav
-html+='<nav><a href="#board" class="act">🏅 Scoreboard</a>'+(nextMd?'<a href="#next">⏭ Next up</a>':'')+MATCHDAYS.map(md=>'<a href="#md'+md.md+'">MD'+md.md+'</a>').join('')+'</nav>';
+html+='<nav><a href="#board" class="act">🏅 Scoreboard</a>'+(nextMd?'<a href="#next">⏭ Next up</a>':'')+MATCHDAYS.map(md=>'<a href="#md'+md.md+'">'+(md.nav||('MD'+md.md))+'</a>').join('')+'</nav>';
 html+='<main>';
 
 // scoreboard

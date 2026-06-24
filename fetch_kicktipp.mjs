@@ -11,8 +11,13 @@ import fs from 'node:fs';
 const GROUP   = 'revel8-prediction';
 const SEASON  = '4593678';
 const TIPPER  = 'Madausinho';
-const MATCHDAYS = [1, 2, 3, 4, 5, 6];   // group stage = spieltagIndex 1..6
+const ROUNDS  = Array.from({ length: 15 }, (_, i) => i + 1);  // 1-10 group, 11-15 knockout
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120 Safari/537.36';
+
+// spieltagIndex -> display label for the dashboard
+const ROUND_LABEL = (idx) => ({
+  11: 'Round of 32', 12: 'Round of 16', 13: 'Quarter-finals', 14: 'Semi-finals', 15: 'Final',
+}[idx] || `Matchday ${idx}`);
 
 // Kicktipp's German short codes -> the exact team names used in build_wc_dashboard.js
 const TEAM = {
@@ -31,7 +36,7 @@ const TEAM = {
 };
 
 const strip = (s) => s.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
-const team  = (code) => TEAM[code] || (console.warn('  ! unknown team code:', code), code);
+const team  = (code) => TEAM[code] || null;   // null => unknown / TBD knockout placeholder
 const ordinal = (n) => n + (['th','st','nd','rd'][(n % 100 - 20) % 10] || ['th','st','nd','rd'][n % 100] || 'th');
 
 async function getPage(spieltagIndex) {
@@ -41,11 +46,12 @@ async function getPage(spieltagIndex) {
   return res.text();
 }
 
-// "MEX SAFR 2 : 0"  ->  { home, away, res:[2,0] | null }
+// "MEX SAFR 2 : 0"  ->  { home, away, res:[2,0] | null }   (null if teams unknown/TBD)
 function parseHeaderCell(txt) {
   const tok = txt.split(' ');
   if (tok.length < 2) return null;
   const home = team(tok[0]), away = team(tok[1]);
+  if (!home || !away) return null;            // knockout round not drawn yet
   const m = txt.match(/(\d+)\s*:\s*(\d+)/);
   const res = m ? [Number(m[1]), Number(m[2])] : null;
   return { home, away, res };
@@ -97,30 +103,45 @@ function parseStandings(html) {
 (async () => {
   console.log(`Fetching ${GROUP} (tipper: ${TIPPER}) …`);
   const allMatches = {};
+  const rounds = [];
   let standings = null;
 
-  for (const md of MATCHDAYS) {
-    const html = await getPage(md);
-    const { matches } = parseMatchday(html, md);
+  for (const idx of ROUNDS) {
+    let html;
+    try { html = await getPage(idx); }
+    catch (e) { console.log(`  round ${idx}: skipped (${e.message})`); continue; }
+
+    const { matches } = parseMatchday(html, idx);
+    try { const s = parseStandings(html); if (s.total) standings = s; } catch { /* tipper not on page */ }
+
+    if (!matches.length) { console.log(`  round ${idx} (${ROUND_LABEL(idx)}): not drawn yet — skipped`); continue; }
+
     for (const m of matches) allMatches[`${m.home}|${m.away}`] = { res: m.res, tip: m.tip };
-    if (md === MATCHDAYS[MATCHDAYS.length - 1]) standings = parseStandings(html);
+    rounds.push({
+      index: idx,
+      label: ROUND_LABEL(idx),
+      knockout: idx >= 11,
+      games: matches.map((m) => ({ home: m.home, away: m.away, res: m.res, tip: m.tip })),
+    });
     const tipped = matches.filter((m) => m.tip).length;
-    console.log(`  spieltag ${md}: ${matches.length} matches, ${tipped} tips`);
+    console.log(`  round ${idx} (${ROUND_LABEL(idx)}): ${matches.length} matches, ${tipped} tips`);
   }
 
+  if (!standings) throw new Error('could not read standings for ' + TIPPER);
   const data = {
     fetchedAt: new Date().toISOString(),
     tipper: TIPPER,
     rank: ordinal(standings.pos) + ' of ' + standings.participants,
     total: standings.total,
     bonus: standings.bonus,
+    rounds,
     matches: allMatches,
   };
 
   // Only bump the timestamp when the actual data changed, so scheduled runs
   // with nothing new don't produce a churn commit (fetchedAt would always differ).
   const path = new URL('./kicktipp_data.json', import.meta.url);
-  const core = (d) => d && JSON.stringify({ tipper: d.tipper, rank: d.rank, total: d.total, bonus: d.bonus, matches: d.matches });
+  const core = (d) => d && JSON.stringify({ tipper: d.tipper, rank: d.rank, total: d.total, bonus: d.bonus, rounds: d.rounds });
   let prev = null;
   try { prev = JSON.parse(fs.readFileSync(path, 'utf8')); } catch { /* first run */ }
   if (prev && core(prev) === core(data)) {
