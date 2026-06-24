@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-24T18:12:49.337Z",
+  "fetchedAt": "2026-06-24T19:41:21.346Z",
   "tipper": "Madausinho",
   "rank": "9th of 23",
   "total": 81,
@@ -622,14 +622,26 @@
         {
           "home": "Bosnia",
           "away": "Qatar",
-          "res": null,
-          "tip": null
+          "res": [
+            2,
+            0
+          ],
+          "tip": [
+            2,
+            1
+          ]
         },
         {
           "home": "Switzerland",
           "away": "Canada",
-          "res": null,
-          "tip": null
+          "res": [
+            0,
+            0
+          ],
+          "tip": [
+            1,
+            2
+          ]
         },
         {
           "home": "Morocco",
@@ -1260,12 +1272,24 @@
       ]
     },
     "Bosnia|Qatar": {
-      "res": null,
-      "tip": null
+      "res": [
+        2,
+        0
+      ],
+      "tip": [
+        2,
+        1
+      ]
     },
     "Switzerland|Canada": {
-      "res": null,
-      "tip": null
+      "res": [
+        0,
+        0
+      ],
+      "tip": [
+        1,
+        2
+      ]
     },
     "Morocco|Haiti": {
       "res": null,
