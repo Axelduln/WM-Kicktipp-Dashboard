@@ -8,10 +8,12 @@
    ============================================================ */
 const fs = require('fs');
 
-const UPDATED = "Tue 23 June 2026, 10:00 UTC";
+// These are fallbacks; fetch_kicktipp.mjs -> kicktipp_data.json overrides them with live values.
+let UPDATED = "Tue 23 June 2026, 10:00 UTC";
 const YOU_NAME = "Madausinho";
-const YOU_RANK = "13th of 20 active";
-const YOU_TOTAL = 44;
+let YOU_RANK = "13th of 20 active";
+let YOU_TOTAL = 44;
+let YOU_BONUS = 8;
 
 // ---- Poisson helper (used for the "model" predicted score + confidence) ----
 function pois(l,k){let p=Math.exp(-l);for(let i=1;i<=k;i++)p*=l/i;return p;}
@@ -80,6 +82,29 @@ const MATCHDAYS = [
   {h:"🇵🇦 Panama",a:"🇭🇷 Croatia",grp:"L",ko:"Tue 23 Jun · 23:00 UTC",mp:[16,22,62],rec:[0,1],you:null,exp:null,gpt:[0,2],note:"Opta supercomputer backs Croatia in 62.0% of its pre-match simulations; must-win for already-eliminated-on-points Panama."},
 ]},
 ];
+
+// ---- merge LIVE Kicktipp data (your tips, results, standings) if available ----
+// Produced by fetch_kicktipp.mjs. Matched by team pair so card order doesn't matter.
+try {
+  const kt = JSON.parse(fs.readFileSync(__dirname+'/kicktipp_data.json','utf8'));
+  const nm = (s)=>s.substring(s.indexOf(' ')+1);   // strip the flag emoji
+  let filled=0;
+  for (const md of MATCHDAYS) for (const g of md.games) {
+    const direct = kt.matches[nm(g.h)+'|'+nm(g.a)];
+    const rev    = !direct && kt.matches[nm(g.a)+'|'+nm(g.h)];
+    const e = direct || rev;
+    if (!e) continue;
+    const orient = (sc)=> !sc ? null : (rev ? [sc[1],sc[0]] : [sc[0],sc[1]]);
+    if (e.res) g.res = orient(e.res);   // keep curated res for not-yet-played games
+    g.you = orient(e.tip);              // null tip => correctly shows "no tip"
+    filled++;
+  }
+  UPDATED = new Date(kt.fetchedAt).toUTCString().replace('GMT','UTC');
+  YOU_RANK = kt.rank; YOU_TOTAL = kt.total; YOU_BONUS = kt.bonus;
+  console.log('Merged Kicktipp:', filled, 'games ·', kt.tipper, kt.rank+',', kt.total+'pts ('+kt.bonus+' bonus)');
+} catch (err) {
+  console.warn('No live kicktipp_data.json ('+err.message+') — using hardcoded fallbacks.');
+}
 
 // fill model scores for games that supplied mp (probabilities) but no explicit model score
 const TOTS = {A_def:2.3};
@@ -174,14 +199,14 @@ html+='<title>World Cup 2026 — My Tipp Tracker</title><style>'+css+'</style></
 html+='<header><h1>🏆 WC 2026 — Tipp Tracker &amp; Predictions</h1><div class="sub">You vs the statistical model vs Big D (expert blog) vs ChatGPT (AI) · scored by your kicktipp rules (4 exact / 3 goal-diff / 2 winner) · updated '+UPDATED+'</div></header>';
 
 // nav
-html+='<nav><a href="#board" class="act">🏅 Scoreboard</a><a href="#next">⏭ Next up</a>'+MATCHDAYS.map(md=>'<a href="#md'+md.md+'">MD'+md.md+'</a>').join('')+'</nav>';
+html+='<nav><a href="#board" class="act">🏅 Scoreboard</a>'+(nextMd?'<a href="#next">⏭ Next up</a>':'')+MATCHDAYS.map(md=>'<a href="#md'+md.md+'">MD'+md.md+'</a>').join('')+'</nav>';
 html+='<main>';
 
 // scoreboard
 html+='<section id="board"><h2>🏅 Standings — '+T_you.played+' games scored</h2>';
 const cards=[['You ('+YOU_NAME+')',T_you,'lead'],['Statistical model',T_mod,''],['Big D (expert)',T_exp,''],['ChatGPT (AI)',T_gpt,'']];
 html+='<div class="board">'+cards.map(c=>'<div class="bcard '+c[2]+'"><div class="nm">'+c[0]+'</div><div class="pt">'+c[1].p+'</div><div class="br">'+c[1].ex+' exact · '+c[1].g3+' goal-diff · '+c[1].g2+' winner · '+c[1].hit+'/'+c[1].played+' hit</div></div>').join('')+'</div>';
-html+='<div class="note">Your kicktipp rank: <b>'+YOU_RANK+'</b> — <b>'+YOU_TOTAL+' pts</b> (incl. 8 bonus points, which the model/Big D/ChatGPT don\'t play; the head-to-head above counts game tips only, so You = 36). MD5 had no tips logged for you at all — that\'s the single biggest gap vs. the model/expert. Two takeaways for MD6: (1) tip <b>every</b> game — untipped games are the costliest, and (2) for the tight matches, a cautious 1-0 scores more reliably than a 2-1. Suggested tips are on each MD6 card below. 🎯</div>';
+html+='<div class="note">Your kicktipp rank: <b>'+YOU_RANK+'</b> — <b>'+YOU_TOTAL+' pts</b> (incl. '+YOU_BONUS+' bonus points, which the model/Big D/ChatGPT don\'t play; the head-to-head above counts game tips only, so You = '+T_you.p+'). Your tips, the results and the standings are pulled <b>live from Kicktipp</b> — last synced '+UPDATED+'. 🎯</div>';
 html+='<div class="scroll"><table class="tab"><thead><tr><th class="l">Predictor</th><th>Points</th><th>Exact (4)</th><th>GoalDiff (3)</th><th>Winner (2)</th><th>Outcome hits</th></tr></thead><tbody>';
 for(const c of cards) html+='<tr><td class="l">'+c[0]+'</td><td>'+c[1].p+'</td><td>'+c[1].ex+'</td><td>'+c[1].g3+'</td><td>'+c[1].g2+'</td><td>'+c[1].hit+'/'+c[1].played+'</td></tr>';
 html+='</tbody></table></div></section>';

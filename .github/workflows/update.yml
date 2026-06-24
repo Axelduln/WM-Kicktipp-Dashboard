@@ -1,0 +1,46 @@
+name: Update WC2026 dashboard from Kicktipp
+
+# Pulls the latest tips / results / standings from the public Kicktipp page,
+# rebuilds the dashboard, and pushes if anything changed. GitHub Pages then
+# redeploys automatically. No secrets needed — the tippuebersicht is public.
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # every 6 hours (UTC)
+  workflow_dispatch:          # manual "Run workflow" button
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-dashboard
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch Kicktipp data
+        run: node fetch_kicktipp.mjs
+
+      - name: Rebuild dashboard
+        run: node build_wc_dashboard.js
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "Auto-update from Kicktipp ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+            git push
+            echo "Pushed an update."
+          else
+            echo "No changes — dashboard already up to date."
+          fi
