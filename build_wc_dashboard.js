@@ -203,7 +203,9 @@ html+='<footer>Predicted scores: <b>Model</b> = Poisson fit to win/draw/loss pro
 html+='</body></html>';
 
 fs.writeFileSync(__dirname+'/wc2026_tipp_tracker.html', html);
-console.log('WROTE wc2026_tipp_tracker.html ('+html.length+' bytes)');
+fs.writeFileSync(__dirname+'/index.html', html);            // GitHub Pages entry point
+fs.writeFileSync(__dirname+'/.nojekyll', '');               // serve files as-is on Pages
+console.log('WROTE wc2026_tipp_tracker.html + index.html ('+html.length+' bytes)');
 console.log('You   :', JSON.stringify(T_you));
 console.log('Model :', JSON.stringify(T_mod));
 console.log('Expert:', JSON.stringify(T_exp));
