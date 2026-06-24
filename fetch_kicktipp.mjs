@@ -116,7 +116,18 @@ function parseStandings(html) {
     bonus: standings.bonus,
     matches: allMatches,
   };
-  fs.writeFileSync(new URL('./kicktipp_data.json', import.meta.url), JSON.stringify(data, null, 2));
+
+  // Only bump the timestamp when the actual data changed, so scheduled runs
+  // with nothing new don't produce a churn commit (fetchedAt would always differ).
+  const path = new URL('./kicktipp_data.json', import.meta.url);
+  const core = (d) => d && JSON.stringify({ tipper: d.tipper, rank: d.rank, total: d.total, bonus: d.bonus, matches: d.matches });
+  let prev = null;
+  try { prev = JSON.parse(fs.readFileSync(path, 'utf8')); } catch { /* first run */ }
+  if (prev && core(prev) === core(data)) {
+    console.log(`No change since last sync (${prev.fetchedAt}) — keeping kicktipp_data.json as is.`);
+    return;
+  }
+  fs.writeFileSync(path, JSON.stringify(data, null, 2));
   console.log(`Wrote kicktipp_data.json — ${Object.keys(allMatches).length} matches; ` +
               `${TIPPER}: ${data.rank}, ${data.total} pts (${data.bonus} bonus).`);
 })().catch((e) => { console.error('FETCH FAILED:', e.message); process.exit(1); });
