@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-06-24T19:41:21.346Z",
+  "fetchedAt": "2026-06-25T02:49:57.307Z",
   "tipper": "Madausinho",
-  "rank": "9th of 23",
-  "total": 81,
-  "bonus": 16,
+  "rank": "11th of 23",
+  "total": 91,
+  "bonus": 20,
   "rounds": [
     {
       "index": 1,
@@ -623,8 +623,8 @@
           "home": "Bosnia",
           "away": "Qatar",
           "res": [
-            2,
-            0
+            3,
+            1
           ],
           "tip": [
             2,
@@ -635,8 +635,8 @@
           "home": "Switzerland",
           "away": "Canada",
           "res": [
-            0,
-            0
+            2,
+            1
           ],
           "tip": [
             1,
@@ -646,26 +646,50 @@
         {
           "home": "Morocco",
           "away": "Haiti",
-          "res": null,
-          "tip": null
+          "res": [
+            4,
+            2
+          ],
+          "tip": [
+            1,
+            0
+          ]
         },
         {
           "home": "Scotland",
           "away": "Brazil",
-          "res": null,
-          "tip": null
+          "res": [
+            0,
+            3
+          ],
+          "tip": [
+            0,
+            1
+          ]
         },
         {
           "home": "South Africa",
           "away": "South Korea",
-          "res": null,
-          "tip": null
+          "res": [
+            1,
+            0
+          ],
+          "tip": [
+            0,
+            1
+          ]
         },
         {
           "home": "Czechia",
           "away": "Mexico",
-          "res": null,
-          "tip": null
+          "res": [
+            0,
+            2
+          ],
+          "tip": [
+            0,
+            1
+          ]
         }
       ]
     },
@@ -1273,8 +1297,8 @@
     },
     "Bosnia|Qatar": {
       "res": [
-        2,
-        0
+        3,
+        1
       ],
       "tip": [
         2,
@@ -1283,8 +1307,8 @@
     },
     "Switzerland|Canada": {
       "res": [
-        0,
-        0
+        2,
+        1
       ],
       "tip": [
         1,
@@ -1292,20 +1316,44 @@
       ]
     },
     "Morocco|Haiti": {
-      "res": null,
-      "tip": null
+      "res": [
+        4,
+        2
+      ],
+      "tip": [
+        1,
+        0
+      ]
     },
     "Scotland|Brazil": {
-      "res": null,
-      "tip": null
+      "res": [
+        0,
+        3
+      ],
+      "tip": [
+        0,
+        1
+      ]
     },
     "South Africa|South Korea": {
-      "res": null,
-      "tip": null
+      "res": [
+        1,
+        0
+      ],
+      "tip": [
+        0,
+        1
+      ]
     },
     "Czechia|Mexico": {
-      "res": null,
-      "tip": null
+      "res": [
+        0,
+        2
+      ],
+      "tip": [
+        0,
+        1
+      ]
     },
     "Curaçao|Ivory Coast": {
       "res": null,
