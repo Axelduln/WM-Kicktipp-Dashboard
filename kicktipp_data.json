@@ -1,8 +1,8 @@
 {
-  "fetchedAt": "2026-06-25T02:49:57.307Z",
+  "fetchedAt": "2026-06-25T08:55:06.537Z",
   "tipper": "Madausinho",
   "rank": "11th of 23",
-  "total": 91,
+  "total": 93,
   "bonus": 20,
   "rounds": [
     {
@@ -684,7 +684,7 @@
           "away": "Mexico",
           "res": [
             0,
-            2
+            3
           ],
           "tip": [
             0,
@@ -817,6 +817,19 @@
         {
           "home": "Jordan",
           "away": "Argentina",
+          "res": null,
+          "tip": null
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "label": "Round of 32",
+      "knockout": true,
+      "games": [
+        {
+          "home": "South Africa",
+          "away": "Canada",
           "res": null,
           "tip": null
         }
@@ -1348,7 +1361,7 @@
     "Czechia|Mexico": {
       "res": [
         0,
-        2
+        3
       ],
       "tip": [
         0,
@@ -1424,6 +1437,10 @@
       "tip": null
     },
     "Jordan|Argentina": {
+      "res": null,
+      "tip": null
+    },
+    "South Africa|Canada": {
       "res": null,
       "tip": null
     }
