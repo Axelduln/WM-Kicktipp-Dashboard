@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-26T08:57:42.916Z",
+  "fetchedAt": "2026-06-26T19:45:51.927Z",
   "tipper": "Madausinho",
   "rank": "13th of 23",
   "total": 99,
@@ -780,13 +780,19 @@
         {
           "home": "Norway",
           "away": "France",
-          "res": null,
+          "res": [
+            1,
+            3
+          ],
           "tip": null
         },
         {
           "home": "Senegal",
           "away": "Iraq",
-          "res": null,
+          "res": [
+            1,
+            0
+          ],
           "tip": null
         },
         {
@@ -1483,11 +1489,17 @@
       ]
     },
     "Norway|France": {
-      "res": null,
+      "res": [
+        1,
+        3
+      ],
       "tip": null
     },
     "Senegal|Iraq": {
-      "res": null,
+      "res": [
+        1,
+        0
+      ],
       "tip": null
     },
     "Uruguay|Spain": {
