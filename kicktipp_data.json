@@ -1,8 +1,8 @@
 {
-  "fetchedAt": "2026-06-25T08:55:06.537Z",
+  "fetchedAt": "2026-06-26T02:54:57.248Z",
   "tipper": "Madausinho",
-  "rank": "11th of 23",
-  "total": 93,
+  "rank": "12th of 23",
+  "total": 99,
   "bonus": 20,
   "rounds": [
     {
@@ -701,38 +701,74 @@
         {
           "home": "Curaçao",
           "away": "Ivory Coast",
-          "res": null,
-          "tip": null
+          "res": [
+            0,
+            2
+          ],
+          "tip": [
+            0,
+            2
+          ]
         },
         {
           "home": "Ecuador",
           "away": "Germany",
-          "res": null,
-          "tip": null
+          "res": [
+            2,
+            1
+          ],
+          "tip": [
+            0,
+            1
+          ]
         },
         {
           "home": "Japan",
           "away": "Sweden",
-          "res": null,
-          "tip": null
+          "res": [
+            1,
+            1
+          ],
+          "tip": [
+            2,
+            1
+          ]
         },
         {
           "home": "Tunisia",
           "away": "Netherlands",
-          "res": null,
-          "tip": null
+          "res": [
+            1,
+            3
+          ],
+          "tip": [
+            1,
+            2
+          ]
         },
         {
           "home": "Paraguay",
           "away": "Australia",
-          "res": null,
-          "tip": null
+          "res": [
+            0,
+            0
+          ],
+          "tip": [
+            0,
+            1
+          ]
         },
         {
           "home": "Türkiye",
           "away": "USA",
-          "res": null,
-          "tip": null
+          "res": [
+            2,
+            1
+          ],
+          "tip": [
+            0,
+            2
+          ]
         }
       ]
     },
@@ -830,6 +866,12 @@
         {
           "home": "South Africa",
           "away": "Canada",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Brazil",
+          "away": "Japan",
           "res": null,
           "tip": null
         }
@@ -1369,28 +1411,64 @@
       ]
     },
     "Curaçao|Ivory Coast": {
-      "res": null,
-      "tip": null
+      "res": [
+        0,
+        2
+      ],
+      "tip": [
+        0,
+        2
+      ]
     },
     "Ecuador|Germany": {
-      "res": null,
-      "tip": null
+      "res": [
+        2,
+        1
+      ],
+      "tip": [
+        0,
+        1
+      ]
     },
     "Japan|Sweden": {
-      "res": null,
-      "tip": null
+      "res": [
+        1,
+        1
+      ],
+      "tip": [
+        2,
+        1
+      ]
     },
     "Tunisia|Netherlands": {
-      "res": null,
-      "tip": null
+      "res": [
+        1,
+        3
+      ],
+      "tip": [
+        1,
+        2
+      ]
     },
     "Paraguay|Australia": {
-      "res": null,
-      "tip": null
+      "res": [
+        0,
+        0
+      ],
+      "tip": [
+        0,
+        1
+      ]
     },
     "Türkiye|USA": {
-      "res": null,
-      "tip": null
+      "res": [
+        2,
+        1
+      ],
+      "tip": [
+        0,
+        2
+      ]
     },
     "Norway|France": {
       "res": null,
@@ -1441,6 +1519,10 @@
       "tip": null
     },
     "South Africa|Canada": {
+      "res": null,
+      "tip": null
+    },
+    "Brazil|Japan": {
       "res": null,
       "tip": null
     }
