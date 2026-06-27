@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-06-27T02:44:54.238Z",
+  "fetchedAt": "2026-06-27T08:31:21.502Z",
   "tipper": "Madausinho",
   "rank": "16th of 23",
-  "total": 105,
-  "bonus": 24,
+  "total": 111,
+  "bonus": 28,
   "rounds": [
     {
       "index": 1,
@@ -822,14 +822,26 @@
         {
           "home": "New Zealand",
           "away": "Belgium",
-          "res": null,
-          "tip": null
+          "res": [
+            1,
+            5
+          ],
+          "tip": [
+            1,
+            2
+          ]
         },
         {
           "home": "Egypt",
           "away": "Iran",
-          "res": null,
-          "tip": null
+          "res": [
+            1,
+            1
+          ],
+          "tip": [
+            2,
+            1
+          ]
         }
       ]
     },
@@ -894,6 +906,12 @@
           "tip": null
         },
         {
+          "home": "Germany",
+          "away": "Paraguay",
+          "res": null,
+          "tip": null
+        },
+        {
           "home": "Netherlands",
           "away": "Morocco",
           "res": null,
@@ -906,8 +924,20 @@
           "tip": null
         },
         {
+          "home": "France",
+          "away": "Sweden",
+          "res": null,
+          "tip": null
+        },
+        {
           "home": "USA",
           "away": "Bosnia",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Australia",
+          "away": "Egypt",
           "res": null,
           "tip": null
         },
@@ -1547,12 +1577,24 @@
       ]
     },
     "New Zealand|Belgium": {
-      "res": null,
-      "tip": null
+      "res": [
+        1,
+        5
+      ],
+      "tip": [
+        1,
+        2
+      ]
     },
     "Egypt|Iran": {
-      "res": null,
-      "tip": null
+      "res": [
+        1,
+        1
+      ],
+      "tip": [
+        2,
+        1
+      ]
     },
     "Croatia|Ghana": {
       "res": null,
@@ -1586,6 +1628,10 @@
       "res": null,
       "tip": null
     },
+    "Germany|Paraguay": {
+      "res": null,
+      "tip": null
+    },
     "Netherlands|Morocco": {
       "res": null,
       "tip": null
@@ -1594,7 +1640,15 @@
       "res": null,
       "tip": null
     },
+    "France|Sweden": {
+      "res": null,
+      "tip": null
+    },
     "USA|Bosnia": {
+      "res": null,
+      "tip": null
+    },
+    "Australia|Egypt": {
       "res": null,
       "tip": null
     },
