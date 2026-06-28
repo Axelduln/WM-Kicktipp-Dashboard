@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-06-27T08:31:21.502Z",
+  "fetchedAt": "2026-06-28T03:24:10.759Z",
   "tipper": "Madausinho",
-  "rank": "16th of 23",
-  "total": 111,
-  "bonus": 28,
+  "rank": "15th of 23",
+  "total": 120,
+  "bonus": 32,
   "rounds": [
     {
       "index": 1,
@@ -853,38 +853,74 @@
         {
           "home": "Croatia",
           "away": "Ghana",
-          "res": null,
-          "tip": null
+          "res": [
+            2,
+            1
+          ],
+          "tip": [
+            3,
+            1
+          ]
         },
         {
           "home": "Panama",
           "away": "England",
-          "res": null,
-          "tip": null
+          "res": [
+            0,
+            2
+          ],
+          "tip": [
+            1,
+            3
+          ]
         },
         {
           "home": "DR Congo",
           "away": "Uzbekistan",
-          "res": null,
-          "tip": null
+          "res": [
+            3,
+            1
+          ],
+          "tip": [
+            0,
+            1
+          ]
         },
         {
           "home": "Colombia",
           "away": "Portugal",
-          "res": null,
-          "tip": null
+          "res": [
+            0,
+            0
+          ],
+          "tip": [
+            2,
+            1
+          ]
         },
         {
           "home": "Algeria",
           "away": "Austria",
-          "res": null,
-          "tip": null
+          "res": [
+            2,
+            2
+          ],
+          "tip": [
+            0,
+            1
+          ]
         },
         {
           "home": "Jordan",
           "away": "Argentina",
-          "res": null,
-          "tip": null
+          "res": [
+            1,
+            2
+          ],
+          "tip": [
+            0,
+            3
+          ]
         }
       ]
     },
@@ -930,8 +966,32 @@
           "tip": null
         },
         {
+          "home": "Mexico",
+          "away": "Ecuador",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "England",
+          "away": "DR Congo",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Belgium",
+          "away": "Senegal",
+          "res": null,
+          "tip": null
+        },
+        {
           "home": "USA",
           "away": "Bosnia",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Portugal",
+          "away": "Croatia",
           "res": null,
           "tip": null
         },
@@ -944,6 +1004,12 @@
         {
           "home": "Argentina",
           "away": "Cape Verde",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Colombia",
+          "away": "Ghana",
           "res": null,
           "tip": null
         }
@@ -1597,28 +1663,64 @@
       ]
     },
     "Croatia|Ghana": {
-      "res": null,
-      "tip": null
+      "res": [
+        2,
+        1
+      ],
+      "tip": [
+        3,
+        1
+      ]
     },
     "Panama|England": {
-      "res": null,
-      "tip": null
+      "res": [
+        0,
+        2
+      ],
+      "tip": [
+        1,
+        3
+      ]
     },
     "DR Congo|Uzbekistan": {
-      "res": null,
-      "tip": null
+      "res": [
+        3,
+        1
+      ],
+      "tip": [
+        0,
+        1
+      ]
     },
     "Colombia|Portugal": {
-      "res": null,
-      "tip": null
+      "res": [
+        0,
+        0
+      ],
+      "tip": [
+        2,
+        1
+      ]
     },
     "Algeria|Austria": {
-      "res": null,
-      "tip": null
+      "res": [
+        2,
+        2
+      ],
+      "tip": [
+        0,
+        1
+      ]
     },
     "Jordan|Argentina": {
-      "res": null,
-      "tip": null
+      "res": [
+        1,
+        2
+      ],
+      "tip": [
+        0,
+        3
+      ]
     },
     "South Africa|Canada": {
       "res": null,
@@ -1644,7 +1746,23 @@
       "res": null,
       "tip": null
     },
+    "Mexico|Ecuador": {
+      "res": null,
+      "tip": null
+    },
+    "England|DR Congo": {
+      "res": null,
+      "tip": null
+    },
+    "Belgium|Senegal": {
+      "res": null,
+      "tip": null
+    },
     "USA|Bosnia": {
+      "res": null,
+      "tip": null
+    },
+    "Portugal|Croatia": {
       "res": null,
       "tip": null
     },
@@ -1653,6 +1771,10 @@
       "tip": null
     },
     "Argentina|Cape Verde": {
+      "res": null,
+      "tip": null
+    },
+    "Colombia|Ghana": {
       "res": null,
       "tip": null
     }

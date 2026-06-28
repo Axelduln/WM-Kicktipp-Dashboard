@@ -130,5 +130,25 @@
  "Australia|Egypt": [
   0,
   1
+ ],
+ "Mexico|Ecuador": [
+  1,
+  0
+ ],
+ "England|DR Congo": [
+  1,
+  0
+ ],
+ "Belgium|Senegal": [
+  2,
+  1
+ ],
+ "Portugal|Croatia": [
+  1,
+  0
+ ],
+ "Colombia|Ghana": [
+  1,
+  0
  ]
 }
