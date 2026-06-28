@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-28T08:46:19.051Z",
+  "fetchedAt": "2026-06-28T19:12:46.976Z",
   "tipper": "Madausinho",
   "rank": "15th of 23",
   "total": 122,
@@ -932,8 +932,14 @@
         {
           "home": "South Africa",
           "away": "Canada",
-          "res": null,
-          "tip": null
+          "res": [
+            0,
+            0
+          ],
+          "tip": [
+            1,
+            2
+          ]
         },
         {
           "home": "Brazil",
@@ -1735,8 +1741,14 @@
       ]
     },
     "South Africa|Canada": {
-      "res": null,
-      "tip": null
+      "res": [
+        0,
+        0
+      ],
+      "tip": [
+        1,
+        2
+      ]
     },
     "Brazil|Japan": {
       "res": null,
