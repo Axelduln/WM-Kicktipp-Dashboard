@@ -1,8 +1,8 @@
 {
-  "fetchedAt": "2026-06-28T19:12:46.976Z",
+  "fetchedAt": "2026-06-29T03:28:53.143Z",
   "tipper": "Madausinho",
   "rank": "15th of 23",
-  "total": 122,
+  "total": 125,
   "bonus": 32,
   "rounds": [
     {
@@ -934,7 +934,7 @@
           "away": "Canada",
           "res": [
             0,
-            0
+            1
           ],
           "tip": [
             1,
@@ -1743,7 +1743,7 @@
     "South Africa|Canada": {
       "res": [
         0,
-        0
+        1
       ],
       "tip": [
         1,
