@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-29T03:28:53.143Z",
+  "fetchedAt": "2026-06-29T19:51:09.571Z",
   "tipper": "Madausinho",
   "rank": "15th of 23",
   "total": 125,
@@ -944,8 +944,14 @@
         {
           "home": "Brazil",
           "away": "Japan",
-          "res": null,
-          "tip": null
+          "res": [
+            2,
+            1
+          ],
+          "tip": [
+            1,
+            2
+          ]
         },
         {
           "home": "Germany",
@@ -1751,8 +1757,14 @@
       ]
     },
     "Brazil|Japan": {
-      "res": null,
-      "tip": null
+      "res": [
+        2,
+        1
+      ],
+      "tip": [
+        1,
+        2
+      ]
     },
     "Germany|Paraguay": {
       "res": null,
