@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-06-29T19:51:09.571Z",
+  "fetchedAt": "2026-06-30T02:54:10.694Z",
   "tipper": "Madausinho",
   "rank": "15th of 23",
   "total": 125,
@@ -956,14 +956,26 @@
         {
           "home": "Germany",
           "away": "Paraguay",
-          "res": null,
-          "tip": null
+          "res": [
+            4,
+            5
+          ],
+          "tip": [
+            2,
+            1
+          ]
         },
         {
           "home": "Netherlands",
           "away": "Morocco",
-          "res": null,
-          "tip": null
+          "res": [
+            1,
+            1
+          ],
+          "tip": [
+            1,
+            2
+          ]
         },
         {
           "home": "Ivory Coast",
@@ -1767,12 +1779,24 @@
       ]
     },
     "Germany|Paraguay": {
-      "res": null,
-      "tip": null
+      "res": [
+        4,
+        5
+      ],
+      "tip": [
+        2,
+        1
+      ]
     },
     "Netherlands|Morocco": {
-      "res": null,
-      "tip": null
+      "res": [
+        1,
+        1
+      ],
+      "tip": [
+        1,
+        2
+      ]
     },
     "Ivory Coast|Norway": {
       "res": null,
