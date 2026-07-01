@@ -1,8 +1,8 @@
 {
-  "fetchedAt": "2026-06-30T19:49:14.699Z",
+  "fetchedAt": "2026-07-01T03:24:12.141Z",
   "tipper": "Madausinho",
   "rank": "15th of 23",
-  "total": 131,
+  "total": 133,
   "bonus": 32,
   "rounds": [
     {
@@ -992,14 +992,26 @@
         {
           "home": "France",
           "away": "Sweden",
-          "res": null,
-          "tip": null
+          "res": [
+            3,
+            0
+          ],
+          "tip": [
+            3,
+            1
+          ]
         },
         {
           "home": "Mexico",
           "away": "Ecuador",
-          "res": null,
-          "tip": null
+          "res": [
+            2,
+            0
+          ],
+          "tip": [
+            2,
+            1
+          ]
         },
         {
           "home": "England",
@@ -1065,6 +1077,12 @@
         {
           "home": "Canada",
           "away": "Morocco",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Paraguay",
+          "away": "France",
           "res": null,
           "tip": null
         },
@@ -1834,12 +1852,24 @@
       ]
     },
     "France|Sweden": {
-      "res": null,
-      "tip": null
+      "res": [
+        3,
+        0
+      ],
+      "tip": [
+        3,
+        1
+      ]
     },
     "Mexico|Ecuador": {
-      "res": null,
-      "tip": null
+      "res": [
+        2,
+        0
+      ],
+      "tip": [
+        2,
+        1
+      ]
     },
     "England|DR Congo": {
       "res": null,
@@ -1878,6 +1908,10 @@
       "tip": null
     },
     "Canada|Morocco": {
+      "res": null,
+      "tip": null
+    },
+    "Paraguay|France": {
       "res": null,
       "tip": null
     },
