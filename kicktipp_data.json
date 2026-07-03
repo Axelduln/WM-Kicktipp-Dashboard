@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-03T08:56:18.743Z",
+  "fetchedAt": "2026-07-03T19:13:11.095Z",
   "tipper": "Madausinho",
   "rank": "16th of 23",
   "total": 145,
@@ -1088,8 +1088,14 @@
         {
           "home": "Australia",
           "away": "Egypt",
-          "res": null,
-          "tip": null
+          "res": [
+            0,
+            1
+          ],
+          "tip": [
+            0,
+            1
+          ]
         },
         {
           "home": "Argentina",
@@ -1986,8 +1992,14 @@
       ]
     },
     "Australia|Egypt": {
-      "res": null,
-      "tip": null
+      "res": [
+        0,
+        1
+      ],
+      "tip": [
+        0,
+        1
+      ]
     },
     "Argentina|Cape Verde": {
       "res": null,
