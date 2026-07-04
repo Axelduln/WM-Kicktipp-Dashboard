@@ -1,8 +1,8 @@
 {
-  "fetchedAt": "2026-07-03T19:13:11.095Z",
+  "fetchedAt": "2026-07-04T02:30:49.513Z",
   "tipper": "Madausinho",
   "rank": "16th of 23",
-  "total": 145,
+  "total": 149,
   "bonus": 32,
   "rounds": [
     {
@@ -1089,8 +1089,8 @@
           "home": "Australia",
           "away": "Egypt",
           "res": [
-            0,
-            1
+            3,
+            5
           ],
           "tip": [
             0,
@@ -1100,14 +1100,26 @@
         {
           "home": "Argentina",
           "away": "Cape Verde",
-          "res": null,
-          "tip": null
+          "res": [
+            3,
+            2
+          ],
+          "tip": [
+            3,
+            1
+          ]
         },
         {
           "home": "Colombia",
           "away": "Ghana",
-          "res": null,
-          "tip": null
+          "res": [
+            1,
+            0
+          ],
+          "tip": [
+            2,
+            1
+          ]
         }
       ]
     },
@@ -1149,6 +1161,12 @@
         {
           "home": "USA",
           "away": "Belgium",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Argentina",
+          "away": "Egypt",
           "res": null,
           "tip": null
         }
@@ -1993,8 +2011,8 @@
     },
     "Australia|Egypt": {
       "res": [
-        0,
-        1
+        3,
+        5
       ],
       "tip": [
         0,
@@ -2002,12 +2020,24 @@
       ]
     },
     "Argentina|Cape Verde": {
-      "res": null,
-      "tip": null
+      "res": [
+        3,
+        2
+      ],
+      "tip": [
+        3,
+        1
+      ]
     },
     "Colombia|Ghana": {
-      "res": null,
-      "tip": null
+      "res": [
+        1,
+        0
+      ],
+      "tip": [
+        2,
+        1
+      ]
     },
     "Canada|Morocco": {
       "res": null,
@@ -2030,6 +2060,10 @@
       "tip": null
     },
     "USA|Belgium": {
+      "res": null,
+      "tip": null
+    },
+    "Argentina|Egypt": {
       "res": null,
       "tip": null
     }
