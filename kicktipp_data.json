@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-04T08:31:11.130Z",
+  "fetchedAt": "2026-07-04T19:04:10.797Z",
   "tipper": "Madausinho",
   "rank": "16th of 23",
   "total": 152,
@@ -1131,7 +1131,10 @@
         {
           "home": "Canada",
           "away": "Morocco",
-          "res": null,
+          "res": [
+            0,
+            3
+          ],
           "tip": null
         },
         {
@@ -2046,7 +2049,10 @@
       ]
     },
     "Canada|Morocco": {
-      "res": null,
+      "res": [
+        0,
+        3
+      ],
       "tip": null
     },
     "Paraguay|France": {
