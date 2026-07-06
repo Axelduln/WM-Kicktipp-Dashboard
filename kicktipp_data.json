@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-05T02:40:46.586Z",
+  "fetchedAt": "2026-07-06T02:45:27.952Z",
   "tipper": "Madausinho",
   "rank": "16th of 23",
   "total": 154,
@@ -1152,14 +1152,26 @@
         {
           "home": "Brazil",
           "away": "Norway",
-          "res": null,
-          "tip": null
+          "res": [
+            1,
+            2
+          ],
+          "tip": [
+            3,
+            1
+          ]
         },
         {
           "home": "Mexico",
           "away": "England",
-          "res": null,
-          "tip": null
+          "res": [
+            2,
+            3
+          ],
+          "tip": [
+            2,
+            1
+          ]
         },
         {
           "home": "Portugal",
@@ -2085,12 +2097,24 @@
       ]
     },
     "Brazil|Norway": {
-      "res": null,
-      "tip": null
+      "res": [
+        1,
+        2
+      ],
+      "tip": [
+        3,
+        1
+      ]
     },
     "Mexico|England": {
-      "res": null,
-      "tip": null
+      "res": [
+        2,
+        3
+      ],
+      "tip": [
+        2,
+        1
+      ]
     },
     "Portugal|Spain": {
       "res": null,
