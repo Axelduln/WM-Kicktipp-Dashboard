@@ -31,7 +31,8 @@ function pBadge(tip,res){ const s=sc(tip,res); if(s===null) return '<span class=
 function gameCard(g){
   const played=!!g.res;
   let h='<div class="gc">';
-  h+='<div class="gc-top"><span class="gc-t">'+g.h+' v '+g.a+'</span><span class="gc-grp">Grp '+g.grp+(played?' · FT':(g.ko?' · '+g.ko:''))+'</span></div>';
+  const grpLabel = g.grp && g.grp.match(/^[A-L]$/) ? 'Grp '+g.grp : (g.grp||'');
+  h+='<div class="gc-top"><span class="gc-t">'+g.h+' v '+g.a+'</span><span class="gc-grp">'+grpLabel+(played?' · FT':(g.ko?' · '+g.ko:''))+'</span></div>';
   if(played) h+='<div class="gc-res">'+g.res[0]+'–'+g.res[1]+'</div>';
   // three predictions
   const row=(label,tip,cls)=>'<div class="pr"><span class="pr-l '+cls+'">'+label+'</span><span class="pr-s">'+sv(tip)+'</span>'+(played?pBadge(tip,g.res):(tip?'':'<span class="pb p0">—</span>'))+'</div>';
@@ -102,14 +103,14 @@ html+='<title>World Cup 2026 — My Tipp Tracker</title><style>'+css+'</style></
 html+='<header><h1>🏆 WC 2026 — Tipp Tracker &amp; Predictions</h1><div class="sub">You vs the statistical model vs the expert blog · scored by your kicktipp rules (4 exact / 3 goal-diff / 2 winner) · updated '+UPDATED+'</div></header>';
 
 // nav
-html+='<nav><a href="#board" class="act">🏅 Scoreboard</a><a href="#next">⏭ Next up</a>'+MATCHDAYS.map(md=>'<a href="#md'+md.md+'">MD'+md.md+'</a>').join('')+'</nav>';
+html+='<nav><a href="#board" class="act">🏅 Scoreboard</a><a href="#next">⏭ Next up</a>'+MATCHDAYS.map(md=>'<a href="#md'+md.md+'">'+(md.nav||'MD'+md.md)+'</a>').join('')+'</nav>';
 html+='<main>';
 
 // scoreboard
 html+='<section id="board"><h2>🏅 Standings — '+T_you.played+' games scored</h2>';
 const cards=[['You ('+YOU_NAME+')',T_you,'lead'],['Statistical model',T_mod,''],['Big D (expert)',T_exp,'']];
 html+='<div class="board">'+cards.map(c=>'<div class="bcard '+c[2]+'"><div class="nm">'+c[0]+'</div><div class="pt">'+c[1].p+'</div><div class="br">'+c[1].ex+' exact · '+c[1].g3+' goal-diff · '+c[1].g2+' winner · '+c[1].hit+'/'+c[1].played+' hit</div></div>').join('')+'</div>';
-html+='<div class="note">Your kicktipp rank: <b>'+YOU_RANK+'</b> — <b>'+YOU_TOTAL+' pts</b> (incl. 8 bonus points, which the model/expert don\'t play; the head-to-head above counts game tips only, so You = 36). MD5 had no tips logged for you at all — that\'s the single biggest gap vs. the model/expert. Two takeaways for MD6: (1) tip <b>every</b> game — untipped games are the costliest, and (2) for the tight matches, a cautious 1-0 scores more reliably than a 2-1. Suggested tips are on each MD6 card below. 🎯</div>';
+html+='<div class="note">Your kicktipp rank: <b>'+YOU_RANK+'</b> — <b>'+YOU_TOTAL+' pts</b> (incl. bonus points not counted in this head-to-head; game-tip total only is shown above). Tips from MD7 onwards are not yet logged — add your kicktipp picks to <code>wc_data.js</code> to keep the comparison live. <b>Four quarterfinals are up next</b> — enter your picks before kickoff!</div>';
 html+='<div class="scroll"><table class="tab"><thead><tr><th class="l">Predictor</th><th>Points</th><th>Exact (4)</th><th>GoalDiff (3)</th><th>Winner (2)</th><th>Outcome hits</th></tr></thead><tbody>';
 for(const c of cards) html+='<tr><td class="l">'+c[0]+'</td><td>'+c[1].p+'</td><td>'+c[1].ex+'</td><td>'+c[1].g3+'</td><td>'+c[1].g2+'</td><td>'+c[1].hit+'/'+c[1].played+'</td></tr>';
 html+='</tbody></table></div></section>';
