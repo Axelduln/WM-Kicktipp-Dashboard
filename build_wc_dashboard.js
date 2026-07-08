@@ -110,7 +110,7 @@ html+='<main>';
 html+='<section id="board"><h2>🏅 Standings — '+T_you.played+' games scored</h2>';
 const cards=[['You ('+YOU_NAME+')',T_you,'lead'],['Statistical model',T_mod,''],['Big D (expert)',T_exp,'']];
 html+='<div class="board">'+cards.map(c=>'<div class="bcard '+c[2]+'"><div class="nm">'+c[0]+'</div><div class="pt">'+c[1].p+'</div><div class="br">'+c[1].ex+' exact · '+c[1].g3+' goal-diff · '+c[1].g2+' winner · '+c[1].hit+'/'+c[1].played+' hit</div></div>').join('')+'</div>';
-html+='<div class="note">Your kicktipp rank: <b>'+YOU_RANK+'</b> — <b>'+YOU_TOTAL+' pts</b> (incl. bonus points not counted in this head-to-head; game-tip total only is shown above). Tips from MD7 onwards are not yet logged — add your kicktipp picks to <code>wc_data.js</code> to keep the comparison live. <b>Four quarterfinals are up next</b> — enter your picks before kickoff!</div>';
+html+='<div class="note">Your kicktipp rank: <b>'+YOU_RANK+'</b> — <b>'+YOU_TOTAL+' pts</b> (incl. bonus points not counted in this head-to-head; game-tip total only is shown above). <b>Four quarterfinals kick off 9–12 Jul</b> — enter your picks before kickoff! MD9 Norway–France and Senegal–Iraq have no tip recorded.</div>';
 html+='<div class="scroll"><table class="tab"><thead><tr><th class="l">Predictor</th><th>Points</th><th>Exact (4)</th><th>GoalDiff (3)</th><th>Winner (2)</th><th>Outcome hits</th></tr></thead><tbody>';
 for(const c of cards) html+='<tr><td class="l">'+c[0]+'</td><td>'+c[1].p+'</td><td>'+c[1].ex+'</td><td>'+c[1].g3+'</td><td>'+c[1].g2+'</td><td>'+c[1].hit+'/'+c[1].played+'</td></tr>';
 html+='</tbody></table></div></section>';
