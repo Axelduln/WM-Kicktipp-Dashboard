@@ -1,8 +1,8 @@
 {
-  "fetchedAt": "2026-07-07T19:49:13.675Z",
+  "fetchedAt": "2026-07-08T02:14:41.043Z",
   "tipper": "Madausinho",
   "rank": "16th of 23",
-  "total": 159,
+  "total": 162,
   "bonus": 32,
   "rounds": [
     {
@@ -1212,8 +1212,14 @@
         {
           "home": "Switzerland",
           "away": "Colombia",
-          "res": null,
-          "tip": null
+          "res": [
+            4,
+            3
+          ],
+          "tip": [
+            2,
+            1
+          ]
         }
       ]
     },
@@ -1237,6 +1243,12 @@
         {
           "home": "Norway",
           "away": "England",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Argentina",
+          "away": "Switzerland",
           "res": null,
           "tip": null
         }
@@ -2177,8 +2189,14 @@
       ]
     },
     "Switzerland|Colombia": {
-      "res": null,
-      "tip": null
+      "res": [
+        4,
+        3
+      ],
+      "tip": [
+        2,
+        1
+      ]
     },
     "France|Morocco": {
       "res": null,
@@ -2189,6 +2207,10 @@
       "tip": null
     },
     "Norway|England": {
+      "res": null,
+      "tip": null
+    },
+    "Argentina|Switzerland": {
       "res": null,
       "tip": null
     }
