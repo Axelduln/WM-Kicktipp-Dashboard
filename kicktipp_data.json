@@ -1,9 +1,9 @@
 {
-  "fetchedAt": "2026-07-10T19:21:33.295Z",
+  "fetchedAt": "2026-07-11T02:11:27.820Z",
   "tipper": "Madausinho",
   "rank": "16th of 23",
-  "total": 169,
-  "bonus": 36,
+  "total": 177,
+  "bonus": 40,
   "rounds": [
     {
       "index": 1,
@@ -1244,8 +1244,8 @@
           "home": "Spain",
           "away": "Belgium",
           "res": [
-            0,
-            0
+            2,
+            1
           ],
           "tip": [
             2,
@@ -1261,6 +1261,19 @@
         {
           "home": "Argentina",
           "away": "Switzerland",
+          "res": null,
+          "tip": null
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "label": "Semi-finals",
+      "knockout": true,
+      "games": [
+        {
+          "home": "France",
+          "away": "Spain",
           "res": null,
           "tip": null
         }
@@ -2222,8 +2235,8 @@
     },
     "Spain|Belgium": {
       "res": [
-        0,
-        0
+        2,
+        1
       ],
       "tip": [
         2,
@@ -2235,6 +2248,10 @@
       "tip": null
     },
     "Argentina|Switzerland": {
+      "res": null,
+      "tip": null
+    },
+    "France|Spain": {
       "res": null,
       "tip": null
     }
