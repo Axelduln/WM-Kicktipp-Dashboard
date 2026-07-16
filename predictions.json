@@ -214,5 +214,13 @@
  "England|Argentina": [
   1,
   2
+ ],
+ "France|England": [
+  1,
+  0
+ ],
+ "Spain|Argentina": [
+  1,
+  0
  ]
 }

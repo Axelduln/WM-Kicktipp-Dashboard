@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-15T19:04:36.838Z",
+  "fetchedAt": "2026-07-16T02:09:52.135Z",
   "tipper": "Madausinho",
   "rank": "15th of 23",
   "total": 187,
@@ -1299,13 +1299,32 @@
           "home": "England",
           "away": "Argentina",
           "res": [
-            0,
-            0
+            1,
+            2
           ],
           "tip": [
             2,
             1
           ]
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "label": "Final",
+      "knockout": true,
+      "games": [
+        {
+          "home": "France",
+          "away": "England",
+          "res": null,
+          "tip": null
+        },
+        {
+          "home": "Spain",
+          "away": "Argentina",
+          "res": null,
+          "tip": null
         }
       ]
     }
@@ -2305,13 +2324,21 @@
     },
     "England|Argentina": {
       "res": [
-        0,
-        0
+        1,
+        2
       ],
       "tip": [
         2,
         1
       ]
+    },
+    "France|England": {
+      "res": null,
+      "tip": null
+    },
+    "Spain|Argentina": {
+      "res": null,
+      "tip": null
     }
   }
 }
