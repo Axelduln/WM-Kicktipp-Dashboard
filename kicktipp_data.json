@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-07-16T02:09:52.135Z",
+  "fetchedAt": "2026-07-19T02:13:33.854Z",
   "tipper": "Madausinho",
   "rank": "15th of 23",
   "total": 187,
@@ -1317,7 +1317,10 @@
         {
           "home": "France",
           "away": "England",
-          "res": null,
+          "res": [
+            4,
+            6
+          ],
           "tip": null
         },
         {
@@ -2333,7 +2336,10 @@
       ]
     },
     "France|England": {
-      "res": null,
+      "res": [
+        4,
+        6
+      ],
       "tip": null
     },
     "Spain|Argentina": {
